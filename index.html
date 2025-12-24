@@ -1,0 +1,689 @@
+<div class="sidebar-overlay" id="sidebarOverlay">
+  <div class="side-bar">
+    <div class="close-btn">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5.63599 5.63672L18.3639 18.3646M5.63599 18.3647L18.3639 5.63682" stroke="#10161F" stroke-width="2"
+          stroke-linecap="round" />
+      </svg>
+    </div>
+    <div class="sidebar-inner">
+      <img class="main-image" src="https://static.tildacdn.com/tild3632-6535-4433-b863-323565383132/MyBox.svg" alt="" />
+      <div class="main-content">
+        <div class="sidebar-header">
+          <h1>MyBox</h1>
+          <button class="btn">На&nbsp;кибериспытании</button>
+          <p>Суверенное хранилище данных</p>
+        </div>
+
+        <div class="text-block">
+          <h5>Идея</h5>
+          <p>
+            Сейчас важные вещи живут в&nbsp;чужих сервисах: фото
+            в&nbsp;Яндекс.Диске, документы в&nbsp;Google Docs, почта
+            у&nbsp;провайдера, а&nbsp;умный дом работает через сервера
+            производителя. У&nbsp;каждого сервиса свои админы, свои правила
+            и&nbsp;свои риски: поменяли политику, закрыли доступ — потерял часть
+            данных. Ты, как пользователь, мало что можешь с&nbsp;этим сделать.
+          </p>
+          <p>
+            Идея MyBox в&nbsp;том, чтобы переосмыслить текущее взаимодействие
+            с&nbsp;облачными сервисами. Мы&nbsp;хотим пересобрать привычную
+            модель, где всё важное хранится и&nbsp;крутится в&nbsp;чужих
+            дата-центрах, а&nbsp;ты остаёшься лишь подписчиком.
+          </p>
+
+          <p>
+            Цель MyBox — чтобы у&nbsp;тебя появилось своё облако на&nbsp;своих
+            устройствах, где и&nbsp;данные, и&nbsp;вычисления остаются под твоим
+            контролем. При этом пользоваться этим должно быть так&nbsp;же
+            просто, как и&nbsp;текущими облачными решениями.
+          </p>
+        </div>
+
+        <div class="text-block">
+          <h5 style="margin-bottom: 0px">В&nbsp;чем фишка</h5>
+          <h4>Свое облако вместо аренды</h4>
+          <p>
+            MyBox выглядит как небольшая коробка, которая стоит у&nbsp;тебя дома
+            или в&nbsp;офисе. Твои личные данные лежат на&nbsp;твоём железе.
+            Между тобой и&nbsp;данными нет внешних админов и&nbsp;служебных
+            аккаунтов. Мы&nbsp;называем это adminless.
+          </p>
+          <h4>Площадка для приложений</h4>
+          <p>
+            Бокс не&nbsp;только хранит файлы. На&nbsp;нём можно запускать
+            приложения, которые работают рядом с&nbsp;данными. Они разработаны
+            так, что данные находятся только в&nbsp;боксе и&nbsp;не уходят
+            наружу.
+          </p>
+
+          <h4>Система множества боксов</h4>
+          <p>
+            Можно иметь несколько устройств MyBox у&nbsp;себя и&nbsp;у
+            доверенных людей. Они синхронизируются между собой, и&nbsp;ты видишь
+            одну и&nbsp;ту&nbsp;же картину данных, с&nbsp;какого&nbsp;бы бокса
+            ни&nbsp;заходил. При этом можно пользоваться даже не&nbsp;своим
+            боксом, а&nbsp;твои данные всё равно будут доступны только тебе.
+          </p>
+
+          <h4>Безопасность и простое использование</h4>
+          <p>
+            Бокс спроектирован и&nbsp;реализован людьми из&nbsp;кибербеза.
+            У&nbsp;нас готовятся открытые кибериспытания с&nbsp;наградой
+            в&nbsp;1&nbsp;млн долларов. Как у&nbsp;Apple. Управление идёт через
+            обычное приложение, не&nbsp;нужны специальные знания и&nbsp;свой
+            айтишник.
+          </p>
+        </div>
+        <div class="text-block">
+          <h5>Сейчас</h5>
+          <p>
+            У&nbsp;МyBox уже работает основа. Есть хранилище с&nbsp;шифрованием
+            и&nbsp;синхронизация нескольких боксов без центрального сервера.
+            Через мобильное приложение можно настроить коробку дома,
+            в&nbsp;офисе и&nbsp;связать их&nbsp;в одну систему. Поверх этой
+            основы уже запущены первые приложения. Команда пользуется MyBох сама
+            и&nbsp;с пилотными клиентами, собираем обратную связь.
+          </p>
+        </div>
+
+        <div class="tech-stack">
+          <p>Технологический стек</p>
+          <div class="stack">
+            <div class="stack-item">macOS</div>
+            <div class="stack-item">Flatcar Linux</div>
+            <div class="stack-item">Docker</div>
+            <div class="stack-item">MinIO</div>
+            <div class="stack-item">Go</div>
+            <div class="stack-item">Swift</div>
+            <div class="stack-item">Samba</div>
+            <div class="stack-item">Grafana Alloy</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .sidebar-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 300ms ease;
+    z-index: 80;
+    width: 100%;
+    height: 100%;
+  }
+
+  .sidebar-overlay.is-open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .close-btn {
+    cursor: pointer;
+    display: flex;
+    position: absolute;
+    right: 24px;
+    top: 24px;
+    z-index: 9999999;
+    width: 48px;
+    height: 48px;
+    transform: rotate(0deg);
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    background: #f5f5f5;
+  }
+
+  .close-btn:hover {
+    background: #dedcdc;
+    transition: all 300ms;
+  }
+
+  .side-bar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 99999999;
+    width: 100%;
+    max-width: 35%;
+    height: calc(100% - 1px) !important;
+    background: white;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform 400ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .sidebar-inner {
+    height: 100%;
+    overflow-y: auto;
+    flex: 1;
+  }
+
+  .sidebar-overlay.is-open .side-bar {
+    transform: translateX(0);
+  }
+
+  .main-content {
+    padding: 0 1.538vw 1.538vw 1.538vw;
+  }
+
+  .main-image {
+    width: 100%;
+    height: 435px;
+    max-height: 435px;
+    object-fit: cover;
+    background-color: #ebebeb;
+  }
+
+  .sidebar-header {
+    margin-top: 1.538vw;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* align-items: center; */
+  }
+
+  .sidebar-header h1 {
+    font-size: 2.051vw;
+    color: #000;
+    font-family: "suisse";
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+    margin: 0;
+    order: 1;
+  }
+
+  .sidebar-header p {
+    color: #12100c;
+    font-family: "suisse";
+    font-size: 1.025vw;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    opacity: 0.6;
+    margin-top: 0.512vw;
+    margin-bottom: 0px;
+    width: 100%;
+    order: 3;
+  }
+
+  .btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 12px;
+    background: rgba(0, 60, 255, 0.08);
+    padding-right: 0.512vw;
+    padding-top: 0.256vw;
+    padding-bottom: 0.256vw;
+    padding-left: 0.512vw;
+    height: fit-content;
+    width: fit-content;
+    /* max-width: 160px; */
+    color: #003cff;
+    font-family: "firacode";
+    font-size: 0.769vw;
+    font-weight: 500;
+    line-height: 120%;
+    border: none;
+    white-space: nowrap;
+
+    @media (min-width: 1900px) {
+      max-width: unset;
+    }
+
+    order: 2;
+  }
+
+  .text-block {
+    margin-top: 2.564vw;
+  }
+
+  .text-block h4 {
+    margin-top: 1.538vw;
+    margin-bottom: 1.282vw;
+    color: #12100c;
+    font-family: "suisse";
+    font-size: 1.025vw;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+  }
+
+  .text-block h5 {
+    color: #12100c;
+    font-family: "suisse";
+    font-size: 1.25vw;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+    margin-bottom: 1.538vw;
+    margin-top: 0px;
+  }
+
+  .text-block p {
+    color: #12100c;
+    font-family: "suisse";
+    font-size: 1.025vw;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    margin-bottom: 0.769vw;
+
+    @media (max-width: 1560px) {
+      margin-bottom: 12px;
+    }
+  }
+
+  .text-block p:nth-last-child {
+    margin-bottom: 0px;
+  }
+
+  .tech-stack {
+    color: #000;
+    font-family: "firacode";
+    font-size: 1.025vw;
+    font-weight: 500;
+    margin-top: 2.564vw;
+    line-height: 120%;
+  }
+
+  .stack {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 1.025vw;
+    width: 90%;
+    gap: 0.512vw;
+  }
+
+  .stack-item {
+    display: flex;
+    /* padding: 8px; */
+    padding-left: 0.512vw;
+    padding-right: 0.512vw;
+    padding-top: 0.256vw;
+    padding-bottom: 0.256vw;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.08);
+    color: #000;
+    font-family: "firacode";
+    font-size: 0.897vw;
+    font-weight: 500;
+    line-height: 120%;
+  }
+
+  @media (max-width: 1560px) {
+    .main-image {
+      max-height: 377px;
+    }
+
+    .sidebar-header {
+      margin-top: 1.5vw;
+    }
+
+    .sidebar-header h1 {
+      margin: 0;
+      font-size: 2vw;
+    }
+
+    .sidebar-header p {
+      font-size: 1.167vw;
+      opacity: 0.6;
+      font-weight: 400;
+    }
+
+    .btn {
+      font-size: 0.833vw;
+    }
+
+    .main-content {
+      padding: 0 1.6vw 1.6vw 1.6vw;
+    }
+
+    .text-block {
+      margin-top: 2.6vw;
+    }
+
+    .text-block h5 {
+      font-size: 1.333vw;
+      margin-bottom: 1.282vw;
+    }
+
+    .text-block p {
+      font-size: 1.167vw;
+    }
+
+    /* .tech-stack .stack .stack-item {
+          font-size: 14px;
+      } */
+
+    .stack {
+      gap: 0.6vw;
+    }
+
+    .close-btn {
+      width: 32px;
+      height: 32px;
+      right: 16px !important;
+      top: 16px !important;
+    }
+
+    .close-btn svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .text-block h4 {
+      font-size: 1.167vw;
+      font-weight: 500;
+      margin-bottom: 1vw;
+      margin-top: 1.3vw;
+    }
+
+    .tech-stack {
+      margin-top: 2.6vw;
+    }
+
+    .tech-stack p {
+      font-size: 1.167vw !important;
+      margin-bottom: 1.3vw;
+    }
+
+    .stack-item {
+      font-size: 1vw;
+      border-radius: 100px;
+      padding-top: 4px;
+      padding-bottom: 4px;
+      padding-right: 8px;
+      padding-left: 8px;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    .main-image {
+      max-height: 377px;
+    }
+
+    .sidebar-header {
+      margin-top: 18px;
+    }
+
+    .sidebar-header h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    .sidebar-header p {
+      font-size: 14px;
+    }
+
+    .btn {
+      font-size: 10px;
+    }
+
+    .main-content {
+      padding: 0 24px 24px 24px;
+    }
+
+    .text-block {
+      margin-top: 44px;
+    }
+
+    .text-block h5 {
+      font-size: 14px;
+    }
+
+    .text-block h4 {
+      font-size: 14px;
+    }
+
+    /* .text-block p {
+          font-size: 16px;
+      } */
+
+    .tech-stack p {
+      font-size: 10px;
+    }
+
+    .tech-stack .stack .stack-item {
+      font-size: 10px;
+    }
+
+    .close-btn {
+      width: 24px;
+      height: 24px;
+    }
+
+    .close-btn svg {
+      width: 12px;
+      height: 12px;
+    }
+
+    .side-bar {
+      top: 46px;
+      max-width: 400px !important;
+    }
+
+    .main-image {
+      height: 260px;
+    }
+
+    .sidebar-header {
+      flex-direction: column;
+    }
+
+    .btn {
+      margin-top: 2vw;
+      order: 3;
+    }
+
+    .sidebar-header p {
+      font-size: 14px;
+      order: 2;
+    }
+
+    .stack {
+      padding-bottom: 42px !important;
+    }
+  }
+
+  @media (max-width: 950px) {
+    .side-bar {
+      top: 60px;
+    }
+  }
+
+  @media (max-width: 780px) {
+    .side-bar {
+      top: 70px;
+      width: 100vw !important;
+      max-width: 100% !important;
+      right: 0 !important;
+      left: 0 !important;
+    }
+
+    .sidebar-header h1 {
+      font-size: 32px;
+    }
+
+    .sidebar-header p {
+      font-size: 16px;
+    }
+
+    .text-block h4 {
+      font-size: 18px;
+      margin-bottom: 14px;
+    }
+
+    .text-block h5 {
+      font-size: 22px;
+    }
+
+    .text-block p {
+      font-size: 16px;
+    }
+
+    .tech-stack {
+      font-size: 14px;
+    }
+
+    .stack {
+      margin-top: 20px;
+    }
+
+    .stack-item {
+      font-size: 12px;
+      padding: 8px;
+      border-radius: 12px;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .main-content {
+      padding: 0 20px 20px 20px;
+    }
+
+    .sidebar-header {
+      flex-direction: column;
+    }
+
+    .btn {
+      /*padding: 0px;*/
+      height: 26px;
+      font-size: 12px;
+      border-radius: 10px;
+      /*max-width: 140px;*/
+    }
+
+    .stack {
+      padding-bottom: 59px !important;
+    }
+
+    .side-bar {
+      transition: transform 133ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .sidebar-overlay {
+      transition: opacity 100ms ease;
+    }
+  }
+
+  @media (max-width: 650px) {
+    .side-bar {
+      top: 86px;
+      width: 100vw !important;
+      max-width: 100% !important;
+    }
+  }
+
+  @media (max-width: 639px) {
+    .side-bar {
+      top: 35px;
+      width: 100vw !important;
+      max-width: 100% !important;
+    }
+  }
+
+  @media (max-width: 515px) {
+    .side-bar {
+      top: 45px;
+      width: 100vw !important;
+      max-width: 100% !important;
+    }
+  }
+
+  @media (max-width: 410px) {
+    .side-bar {
+      top: 56px;
+      width: 100vw !important;
+      max-width: 100% !important;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .sidebar-header h1 {
+      font-size: 20px;
+    }
+
+    .sidebar-header p {
+      font-size: 12px;
+    }
+
+    .btn {
+      font-size: 10px;
+      height: 19px;
+      /*width: 114px;*/
+    }
+
+    .text-block h4 {
+      font-size: 14px;
+      margin-bottom: 14px;
+    }
+
+    .text-block h5 {
+      font-size: 16px;
+    }
+
+    .text-block p {
+      font-size: 14px;
+    }
+
+    .stack-item {
+      font-size: 12px !important;
+      padding: 8px;
+      border-radius: 9px;
+      height: 12px;
+      padding-right: 8px;
+      padding-left: 8px;
+    }
+  }
+
+  @media (max-width: 286px) {
+    .side-bar {
+      top: 80px;
+      width: 100vw !important;
+      max-width: 100% !important;
+    }
+  }
+</style>
+
+<script>
+  (function () {
+    const openTriggers = document.querySelectorAll(".item");
+    const overlay = document.getElementById("sidebarOverlay");
+    const closeBtn = overlay.querySelector(".close-btn");
+
+    openTriggers.forEach((trigger) => {
+      trigger.addEventListener("click", () => {
+        overlay.classList.add("is-open");
+        document.body.style.overflow = "hidden";
+        console.log("open");
+      });
+    });
+
+    closeBtn.addEventListener("click", closeSidebar);
+
+    overlay.addEventListener("click", (e) => {
+      if (e.target === overlay) closeSidebar();
+    });
+
+    function closeSidebar() {
+      overlay.classList.remove("is-open");
+      document.body.style.overflow = "";
+    }
+  })();
+</script>

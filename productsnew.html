@@ -1,0 +1,133 @@
+<style>
+#rec1692057471{ 
+    z-index: 1;
+    position: relative;
+    } 
+    #rec1693942231
+    { z-index: 1;
+    position: relative; 
+        
+    }
+
+#rec1704687521 .side-bar-menu-mobile {
+    overflow: hidden;
+    transition: max-height 0.5s ease, height 0.5s ease;
+    pointer-events: auto;
+}
+
+#rec1704687521 .mobie-main-logo{
+     pointer-events: auto;
+}
+
+#rec1704687521 .menu-open .side-bar-menu-mobile {
+    height: 171px !important;
+    max-height: 171px !important;
+    pointer-events: auto;
+}
+
+#rec1704687521 .mobile-menu-links {
+    opacity: 0;
+    pointer-events: none;
+   transition: opacity 0.1s ease;
+}
+
+#rec1704687521 .menu-open .mobile-menu-links {
+    opacity: 1;
+    pointer-events: auto;
+    transition-delay: 0.2s;
+}
+#rec1704687521:not(.menu-open) .mobile-menu-links {
+    transition-delay: 0s;
+}
+
+#rec1704687521 .open {
+    display: block !important;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 9999;
+    pointer-events: auto;
+}
+
+#rec1704687521 .close {
+    display: none !important;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 9999;
+    pointer-events: auto;
+}
+
+#rec1704687521 .menu-open .open {
+    display: none !important;
+    pointer-events: auto;
+}
+
+#rec1704687521 .menu-open .close {
+    display: block !important;
+    pointer-events: auto;
+}
+
+@media screen and (min-width: 1200px) {
+    #rec1704687521 {
+        height: 100vh;
+        position: fixed;
+        z-index: 99999;
+        top: 0;
+        left: 0;
+        width: 260px;
+    }
+
+    /*#rec1704687521 {*/
+    /*    width: calc(100% - 260px);*/
+    /*}*/
+}
+
+@media screen and (max-width: 1199px) {
+   #rec1704687521 {
+        position: fixed;
+        z-index: 99999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        max-height: 300px !important;
+        pointer-events: none;
+    }
+
+    #rec1704687521{
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 639px) {
+    #rec1704687521 .menu-open .side-bar-menu-mobile {
+        height: 250px !important;
+        max-height: 250px !important;
+    }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const block = document.querySelector('#rec1704687521');
+  if (!block) return;
+
+  const openBtns = block.querySelectorAll('.open');
+  const closeBtns = block.querySelectorAll('.close');
+
+  openBtns.forEach(btn => {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      block.classList.add('menu-open'); 
+    });
+  });
+
+  closeBtns.forEach(btn => {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      block.classList.remove('menu-open'); 
+    });
+  });
+});
+</script>

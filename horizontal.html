@@ -1,0 +1,193 @@
+<style>
+    #t-scroll-section {
+        position: relative;
+        width: 100%;
+
+        height: 400vh;
+        background-color: transparent;
+    }
+
+    .t-scroll-sticky {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .t-scroll-track {
+        display: flex;
+        padding-left: 10vw;
+        gap: 20px;
+        will-change: transform;
+        transition: transform 0.1s linear;
+    }
+
+
+    .box-item {
+        border-radius: 12px;
+        background: #f5f5f5;
+        display: flex;
+        flex-direction: column;
+        padding: 30px;
+        gap: 20px;
+        min-width: 350px;
+        height: 400px;
+        box-sizing: border-box;
+        flex-shrink: 0;
+        justify-content: space-between;
+    }
+
+    .box-item-content h3 {
+        color: #000;
+        font-family: Arial, sans-serif;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 1.2;
+        margin-bottom: 15px;
+    }
+
+    .box-item-content p {
+        color: #12100c;
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        opacity: 0.7;
+    }
+
+    .line {
+        width: 100%;
+        height: 1px;
+        background-color: #000;
+        opacity: 0.1;
+        margin: 15px 0;
+    }
+
+    .t-progress-container {
+        position: absolute;
+        bottom: 10vh;
+        left: 10vw;
+        width: 80vw;
+        height: 4px;
+        background: rgba(0, 0, 0, 0.05);
+        border-radius: 4px;
+        overflow: hidden;
+    }
+
+    .t-progress-bar {
+        width: 0%;
+        height: 100%;
+        background: #3E48F2;
+        transition: width 0.1s linear;
+    }
+
+
+    @media screen and (max-width: 640px) {
+        .box-item {
+            min-width: 280px;
+            height: 350px;
+            padding: 20px;
+        }
+
+        #t-scroll-section {
+            height: 500vh;
+        }
+    }
+</style>
+
+<div id="t-scroll-section">
+    <div class="t-scroll-sticky">
+        <div class="t-scroll-track" id="scroll-track">
+            <div class="box-item">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                    <path
+                        d="M20 6.7807L8.33333 11.1557V20.0929C8.33333 24.5116 10.8298 28.5511 14.7819 30.5274L20 33.1365L25.2181 30.5274C29.1702 28.5511 31.6667 24.5116 31.6667 20.0929V11.1557L20 6.7807Z"
+                        fill="#3E48F2" />
+                </svg>
+                <div class="box-item-content">
+                    <h3>Данными владеет только пользователь</h3>
+                    <div class="line"></div>
+                    <p>ex. Копилка</p>
+                </div>
+            </div>
+
+            <div class="box-item">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                    <path d="M6.6665 33.3335V6.66683H22.6431L33.3332 14.0236V33.3335H6.6665Z" fill="#00AD03" />
+                </svg>
+                <div class="box-item-content">
+                    <h3>Read Only приложения</h3>
+                    <div class="line"></div>
+                    <p>ex. Копилка</p>
+                </div>
+            </div>
+
+            <div class="box-item">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                    <path
+                        d="M28.3332 28.0957C28.3332 27.5328 19.9998 23.3333 19.9998 23.3333C19.9998 23.3333 11.6665 27.5328 11.6665 28.0957"
+                        stroke="#3E48F2" stroke-width="2" />
+                </svg>
+                <div class="box-item-content">
+                    <h3>Децентрализация, p2p взаимодействие</h3>
+                    <div class="line"></div>
+                    <p>ex. Приказы в KeyBox</p>
+                </div>
+            </div>
+
+            <div class="box-item">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                    <path d="M3.3335 30.8335C3.3335 29.5217 18.3335 21.6668 18.3335 21.6668" stroke="#F2773E"
+                        stroke-width="2" />
+                </svg>
+                <div class="box-item-content">
+                    <h3>Без доверия производителям</h3>
+                    <div class="line"></div>
+                    <p>ex. MyBox, XOR, Гермофон</p>
+                </div>
+            </div>
+
+            <div class="box-item">
+                <div class="box-item-content">
+                    <h3>Humanless — без людей в сборке</h3>
+                    <div class="line"></div>
+                    <p>ex. MyBox, СКУД, KeyBox</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="t-progress-container">
+            <div class="t-progress-bar" id="progress-bar"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const section = document.getElementById('t-scroll-section');
+        const track = document.getElementById('scroll-track');
+        const progress = document.getElementById('progress-bar');
+
+        function updateScroll() {
+            const rect = section.getBoundingClientRect();
+            const sectionHeight = section.offsetHeight;
+            const viewportHeight = window.innerHeight;
+
+            let scrollFraction = -rect.top / (sectionHeight - viewportHeight);
+            scrollFraction = Math.max(0, Math.min(1, scrollFraction));
+
+            const maxScroll = track.scrollWidth - window.innerWidth + (window.innerWidth * 0.1);
+            const translateX = scrollFraction * maxScroll;
+
+            track.style.transform = `translateX(-${translateX}px)`;
+            progress.style.width = `${scrollFraction * 100}%`;
+        }
+
+        window.addEventListener('scroll', updateScroll);
+        window.addEventListener('resize', updateScroll);
+        updateScroll();
+    });
+</script>

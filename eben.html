@@ -1,0 +1,38 @@
+<div class="menu-links-fixed-bottom">
+  <a href="https://t.me/maya_it_ru">Telegram</a>
+
+  <a href="mailto:maya@it.ru">maya@it.ru</a>
+</div>
+
+<style>
+  .menu-links-fixed-bottom {
+    position: fixed !important;
+    bottom: 40px !important;
+    display: flex;
+    flex-direction: column;
+    z-index: 9999;
+    left: 40px !important;
+    gap: 16px;
+
+    @media (max-width: 1200px) {
+      display: none;
+    }
+  }
+
+  .menu-links-fixed-bottom a {
+    color: #12100c !important;
+    font-family: "firacode";
+    height: fit-content;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 450;
+    line-height: 140%;
+    text-decoration-line: underline !important;
+    text-decoration-style: solid;
+    text-decoration-skip-ink: auto;
+    text-decoration-thickness: auto;
+    text-underline-offset: auto;
+    text-underline-position: from-font;
+    opacity: 0.4;
+  }
+</style>

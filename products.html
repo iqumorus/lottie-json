@@ -1,0 +1,54 @@
+<style>
+    /* Десктоп: 1200px и выше */
+    
+    /*#rec1651748921 .menu-footer-link{*/
+    /*    border: 1px solid red;*/
+    /*}*/
+    @media screen and (min-width: 1200px) {
+        #rec1704687521 {
+            height: 100vh;
+            max-height: 100vh;
+            position: fixed;
+            z-index: 99999;
+            top: 0;
+            left: 0;
+            width: 260px;
+            max-width: 260px;
+            pointer-events: none;
+        }
+
+        #rec1704687521 {
+            width: calc(100% - 260px);
+        }
+        
+        .desktop-menu-links {
+            pointer-events: auto !important;
+        }
+        
+    }
+
+    /* Мобильные + планшеты: 320–1199px */
+    @media screen and (max-width: 1199px) {
+        #rec1704687521 {
+            position: fixed;
+            z-index: 99999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            max-height: 300px !important;
+            pointer-events: none;
+        }
+        
+        .mobile-menu-links {
+           pointer-events: auto !important; 
+        }
+
+        #rec1704687521 {
+            width: 100%;
+        
+        }
+    }    
+    
+</style>

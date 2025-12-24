@@ -1,0 +1,110 @@
+<style>
+    /* Десктоп: 1200px и выше */
+
+    /*#rec1651748921 .menu-links{*/
+    /*    border: 1px solid red;*/
+    /*    z-index: 9999999; */
+    /*}*/
+
+    #rec1692057471 {
+        z-index: 1;
+        position: relative;
+    }
+
+    #rec1693942231 {
+        z-index: 1;
+        position: relative;
+    }
+
+    #rec1657641651 .tn-atom {
+        height: 100%;
+    }
+
+    #rec1657641651 .video-wrap {
+        position: absolute;
+        inset: 0;
+    }
+
+    #rec1657641651 .video-wrap video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    .mobile-menu-links {
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    .mobile-menu-links.menu-open {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    @media screen and (min-width: 1200px) {
+        #rec1651748921 {
+            height: 100vh;
+            max-height: 100vh;
+            position: fixed;
+            z-index: 99999;
+            top: 0;
+            left: 0;
+            width: 260px;
+            max-width: 260px;
+            pointer-events: none;
+        }
+
+        #rec1667138941 {
+            width: calc(100% - 260px);
+        }
+
+        .desktop-menu-links {
+            pointer-events: auto;
+        }
+
+    }
+
+    /* Мобильные + планшеты: 320–1199px */
+    @media screen and (max-width: 1199px) {
+        #rec1651748921 {
+            position: fixed;
+            z-index: 99999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            max-height: 300px !important;
+            pointer-events: none;
+        }
+
+        .mobile-menu-links {
+            pointer-events: auto;
+        }
+
+        #rec1667138941 {
+            width: 100%;
+
+        }
+    }
+</style>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const closeButtons = document.querySelectorAll('.close');
+        const mobileMenu = document.querySelector('.mobile-menu-links');
+
+        if (!mobileMenu) return;
+
+        closeButtons.forEach(button => {
+            button.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                mobileMenu.classList.toggle('menu-open');
+            });
+        });
+    });
+</script>

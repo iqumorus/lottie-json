@@ -1,0 +1,693 @@
+<div class="sidebar-overlay-6" id="sidebarOverlay6">
+  <div class="side-bar-6">
+    <div class="close-btn-6">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5.63599 5.63672L18.3639 18.3646M5.63599 18.3647L18.3639 5.63682" stroke="#10161F" stroke-width="2"
+          stroke-linecap="round" />
+      </svg>
+    </div>
+    <div class="sidebar-inner-6">
+      <img class="main-image-6" src="https://static.tildacdn.com/tild6330-3663-4435-a364-383237343262/Smart_Space.png"
+        alt="" />
+      <div class="main-content-6">
+        <div class="sidebar-header-6">
+          <h1>Smart Space</h1>
+          <button class="btn-6">Разрабатываем прототип</button>
+          <p>Умное управление пространством</p>
+        </div>
+
+        <div class="text-block-6">
+          <h5>Идея и цели</h5>
+          <p>
+            Smart Space — это домашняя система комфорта и управления
+            пространством для людей, которые хотят, чтобы дом подстраивался под
+            них, а не наоборот. Она ориентирована на тех, кто устал держать в
+            голове множество приложений и пультов и предпочитает один понятный
+            интерфейс.
+          </p>
+
+          <p>
+            Идея Smart Space в том, чтобы подняться над набором разрозненных
+            устройств и собрать их в единый, прозрачный слой управления.
+            Пользователь задаёт цели по комфорту — температуру, свежий воздух,
+            уровень шума, а система самостоятельно определяет, какие подсистемы
+            запустить.
+          </p>
+
+          <p>
+            Цель — сделать «айфон в мире умных домов»: минималистичный,
+            аккуратный, автономный интерфейс, одинаково понятный любому
+            человеку.
+          </p>
+        </div>
+
+        <div class="text-block-6">
+          <h5 style="margin-bottom: 0px">В чем фишка</h5>
+          <h4>Один экран комфорта вместо десятка пультов</h4>
+          <p>
+            Smart Space объединяет системы Smart Home Panel, Smart Media Room и
+            BLE-датчики. Каждая из них отвечает за свою область, но для
+            пользователя это единое решение. На экране отображаются температура,
+            влажность, качество воздуха и другие параметры среды, а управление
+            всеми подсистемами сводится к нескольким понятным действиям.
+          </p>
+          <h4>Интеграция с экосистемами умного дома</h4>
+          <p>
+            Система интегрируется с существующими решениями умного дома. Панель
+            выступает единым «лицом» дома, а не ещё одним отдельным приложением.
+            Управление возможно как с физической панели, так и через мобильное
+            приложение.
+          </p>
+          <h4>Понимание где находится человек</h4>
+          <p>
+            На основе данных датчиков и Wi-Fi-позиционирования Smart Space
+            определяет, в какой комнате находится человек. Интерфейс
+            автоматически открывает нужное помещение, сценарии активируются при
+            появлении людей и отключаются, когда помещение пустует. Это снижает
+            лишние действия и помогает экономить ресурсы.
+          </p>
+
+          <h4>Локальная работа без лишних глаз</h4>
+          <p>
+            Логика и данные системы хранятся на железе владельца. Smart Space
+            продолжает работать без доступа к интернету. Производитель и
+            администраторы не имеют доступа к устройствам и телеметрии. Запуск и
+            базовая настройка рассчитаны на обычного пользователя и не требуют
+            обязательного участия интеграторов.
+          </p>
+        </div>
+        <div class="text-block-6">
+          <h5>Сейчас</h5>
+          <p>
+            Система находится на стадии разработки прототипа. Уже проведены
+            замеры и анализ на данных из реальной квартиры, ведутся эксперименты
+            с позиционированием, команда выбирает аппаратную платформу для
+            панели и датчиков.
+          </p>
+
+          <p>
+            Ближайшая задача — собрать рабочий прототип с базовым управлением
+            климатом, протестировать его в пилотной квартире и параллельно
+            подготовить мобильную версию интерфейса и первые алгоритмы
+            приоритизации параметров комфорта.
+          </p>
+        </div>
+
+        <div class="tech-stack-6">
+          <p>Технологический стек</p>
+          <div class="stack-6">
+            <div class="stack-item-6">Raspberry Pi</div>
+            <div class="stack-item-6">Crestron</div>
+            <div class="stack-item-6">Whisper</div>
+            <div class="stack-item-6">Piper</div>
+            <div class="stack-item-6">RHVoice</div>
+            <div class="stack-item-6">openWakeWord</div>
+            <div class="stack-item-6">iOS</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .sidebar-overlay-6 {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 300ms ease;
+    z-index: 80;
+    width: 100%;
+    height: 100%;
+  }
+
+  .sidebar-overlay-6.is-open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .close-btn-6 {
+    cursor: pointer;
+    display: flex;
+    position: absolute;
+    right: 24px;
+    top: 24px;
+    z-index: 9999999;
+    width: 48px;
+    height: 48px;
+    transform: rotate(-60deg);
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    background: #f5f5f5;
+  }
+
+  .close-btn-6:hover {
+    background: #dedcdc;
+    transition: all 300ms;
+  }
+
+  .side-bar-6 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 99999999;
+    width: 100%;
+    max-width: 35%;
+    height: calc(100% - 1px) !important;
+    background: white;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform 400ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .sidebar-inner-6 {
+    height: 100%;
+    overflow-y: auto;
+    flex: 1;
+  }
+
+  .sidebar-overlay-6.is-open .side-bar-6 {
+    transform: translateX(0);
+  }
+
+  .main-content-6 {
+    padding: 0 1.538vw 1.538vw 1.538vw;
+  }
+
+  .main-image-6 {
+    width: 100%;
+    height: 435px;
+    max-height: 435px;
+    object-fit: cover;
+    background-color: #ebebeb;
+  }
+
+  .sidebar-header-6 {
+    margin-top: 1.538vw;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* align-items: center; */
+  }
+
+  .sidebar-header-6 h1 {
+    font-size: 2.051vw;
+    color: #000;
+    font-family: "suisse";
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+    margin: 0;
+    order: 1;
+  }
+
+  .sidebar-header-6 p {
+    color: #12100c;
+    font-family: "suisse";
+    font-size: 1.025vw;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    opacity: 0.6;
+    margin-top: 0.512vw;
+    margin-bottom: 0px;
+    width: 100%;
+    order: 3;
+  }
+
+  .btn-6 {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 12px;
+    background: rgba(0, 60, 255, 0.08);
+    padding-right: 0.512vw;
+    padding-top: 0.256vw;
+    padding-bottom: 0.256vw;
+    padding-left: 0.512vw;
+    height: fit-content;
+    width: fit-content;
+    /* max-width: 160px; */
+    color: #003cff;
+    font-family: "firacode";
+    font-size: 0.769vw;
+    font-weight: 500;
+    line-height: 120%;
+    border: none;
+    white-space: nowrap;
+
+    @media (min-width: 1900px) {
+      max-width: unset;
+    }
+
+    order: 2;
+  }
+
+  .text-block-6 {
+    margin-top: 2.564vw;
+  }
+
+  .text-block-6 h4 {
+    margin-top: 1.538vw;
+    margin-bottom: 1.282vw;
+    color: #12100c;
+    font-family: "suisse";
+    font-size: 1.025vw;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+  }
+
+  .text-block-6 h5 {
+    color: #12100c;
+    font-family: "suisse";
+    font-size: 1.25vw;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+    margin-bottom: 1.538vw;
+    margin-top: 0px;
+  }
+
+  .text-block-6 p {
+    color: #12100c;
+    font-family: "suisse";
+    font-size: 1.025vw;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    margin-bottom: 0.769vw;
+
+    @media (max-width: 1560px) {
+      margin-bottom: 12px;
+    }
+  }
+
+  .text-block-6 p:nth-last-child {
+    margin-bottom: 0px;
+  }
+
+  .tech-stack-6 {
+    color: #000;
+    font-family: "firacode";
+    font-size: 1.025vw;
+    font-weight: 500;
+    margin-top: 2.564vw;
+    line-height: 120%;
+  }
+
+  .stack-6 {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 1.025vw;
+    width: 90%;
+    gap: 0.512vw;
+  }
+
+  .stack-item-6 {
+    display: flex;
+    /* padding: 8px; */
+    padding-left: 0.512vw;
+    padding-right: 0.512vw;
+    padding-top: 0.256vw;
+    padding-bottom: 0.256vw;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.08);
+    color: #000;
+    font-family: "firacode";
+    font-size: 0.897vw;
+    font-weight: 500;
+    line-height: 120%;
+  }
+
+  @media (max-width: 1560px) {
+    .main-image-6 {
+      max-height: 377px;
+    }
+
+    .sidebar-header-6 {
+      margin-top: 1.5vw;
+    }
+
+    .sidebar-header-6 h1 {
+      margin: 0;
+      font-size: 2vw;
+    }
+
+    .sidebar-header-6 p {
+      font-size: 1.167vw;
+      opacity: 0.6;
+      font-weight: 400;
+    }
+
+    .btn-6 {
+      font-size: 0.833vw;
+    }
+
+    .main-content-6 {
+      padding: 0 1.6vw 1.6vw 1.6vw;
+    }
+
+    .text-block-6 {
+      margin-top: 2.6vw;
+    }
+
+    .text-block-6 h5 {
+      font-size: 1.333vw;
+      margin-bottom: 1.282vw;
+    }
+
+    .text-block-6 p {
+      font-size: 1.167vw;
+    }
+
+    /* .tech-stack-6 .stack-6 .stack-item-6 {
+          font-size: 14px;
+      } */
+
+    .stack-6 {
+      gap: 0.6vw;
+    }
+
+    .close-btn-6 {
+      width: 32px;
+      height: 32px;
+      right: 16px !important;
+      top: 16px !important;
+    }
+
+    .close-btn-6 svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .text-block-6 h4 {
+      font-size: 1.167vw;
+      font-weight: 500;
+      margin-bottom: 1vw;
+      margin-top: 1.3vw;
+    }
+
+    .tech-stack-6 {
+      margin-top: 2.6vw;
+    }
+
+    .tech-stack-6 p {
+      font-size: 1.167vw !important;
+      margin-bottom: 1.3vw;
+    }
+
+    .stack-item-6 {
+      font-size: 1vw;
+      border-radius: 100px;
+      padding-top: 4px;
+      padding-bottom: 4px;
+      padding-right: 8px;
+      padding-left: 8px;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    .main-image-6 {
+      max-height: 377px;
+    }
+
+    .sidebar-header-6 {
+      margin-top: 18px;
+    }
+
+    .sidebar-header-6 h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    .sidebar-header-6 p {
+      font-size: 14px;
+    }
+
+    .btn-6 {
+      font-size: 10px;
+    }
+
+    .main-content-6 {
+      padding: 0 24px 24px 24px;
+    }
+
+    .text-block-6 {
+      margin-top: 44px;
+    }
+
+    .text-block-6 h5 {
+      font-size: 14px;
+    }
+
+    .text-block-6 h4 {
+      font-size: 14px;
+    }
+
+    /* .text-block-6 p {
+          font-size: 16px;
+      } */
+
+    .tech-stack-6 p {
+      font-size: 10px;
+    }
+
+    .tech-stack-6 .stack-6 .stack-item-6 {
+      font-size: 10px;
+    }
+
+    .close-btn-6 {
+      width: 24px;
+      height: 24px;
+    }
+
+    .close-btn-6 svg {
+      width: 12px;
+      height: 12px;
+    }
+
+    .side-bar-6 {
+      top: 46px;
+      max-width: 400px !important;
+    }
+
+    .main-image-6 {
+      height: 260px;
+    }
+
+    .sidebar-header-6 {
+      flex-direction: column;
+    }
+
+    .btn-6 {
+      margin-top: 2vw;
+      order: 3;
+    }
+
+    .sidebar-header-6 p {
+      font-size: 14px;
+      order: 2;
+    }
+
+    .stack-6 {
+      padding-bottom: 42px !important;
+    }
+  }
+
+  @media (max-width: 950px) {
+    .side-bar-6 {
+      top: 60px;
+    }
+  }
+
+  @media (max-width: 780px) {
+    .side-bar-6 {
+      top: 70px;
+      width: 100vw !important;
+      max-width: 100% !important;
+      right: 0 !important;
+      left: 0 !important;
+    }
+
+    .sidebar-header-6 h1 {
+      font-size: 32px;
+    }
+
+    .sidebar-header-6 p {
+      font-size: 16px;
+    }
+
+    .text-block-6 h4 {
+      font-size: 18px;
+      margin-bottom: 14px;
+    }
+
+    .text-block-6 h5 {
+      font-size: 22px;
+    }
+
+    .text-block-6 p {
+      font-size: 16px;
+    }
+
+    .tech-stack-6 {
+      font-size: 14px;
+    }
+
+    .stack-6 {
+      margin-top: 20px;
+    }
+
+    .stack-item-6 {
+      font-size: 12px;
+      padding: 8px;
+      border-radius: 12px;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .main-content-6 {
+      padding: 0 20px 20px 20px;
+    }
+
+    .sidebar-header-6 {
+      flex-direction: column;
+    }
+
+    .btn-6 {
+      /*padding: 0px;*/
+      height: 26px;
+      font-size: 12px;
+      border-radius: 10px;
+      /*max-width: 140px;*/
+    }
+
+    .stack-6 {
+      padding-bottom: 59px !important;
+    }
+
+    .side-bar-6 {
+      transition: transform 133ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .sidebar-overlay-6 {
+      transition: opacity 100ms ease;
+    }
+  }
+
+  @media (max-width: 650px) {
+    .side-bar-6 {
+      top: 86px;
+      width: 100vw !important;
+      max-width: 100% !important;
+    }
+  }
+
+  @media (max-width: 639px) {
+    .side-bar-6 {
+      top: 35px;
+      width: 100vw !important;
+      max-width: 100% !important;
+    }
+  }
+
+  @media (max-width: 515px) {
+    .side-bar-6 {
+      top: 45px;
+      width: 100vw !important;
+      max-width: 100% !important;
+    }
+  }
+
+  @media (max-width: 410px) {
+    .side-bar-6 {
+      top: 56px;
+      width: 100vw !important;
+      max-width: 100% !important;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .sidebar-header-6 h1 {
+      font-size: 20px;
+    }
+
+    .sidebar-header-6 p {
+      font-size: 12px;
+    }
+
+    .btn-6 {
+      font-size: 10px;
+      height: 19px;
+      /*width: 114px;*/
+    }
+
+    .text-block-6 h4 {
+      font-size: 14px;
+      margin-bottom: 14px;
+    }
+
+    .text-block-6 h5 {
+      font-size: 16px;
+    }
+
+    .text-block-6 p {
+      font-size: 14px;
+    }
+
+    .stack-item-6 {
+      font-size: 12px !important;
+      padding: 8px;
+      border-radius: 9px;
+      height: 12px;
+      padding-right: 8px;
+      padding-left: 8px;
+    }
+  }
+
+  @media (max-width: 286px) {
+    .side-bar-6 {
+      top: 80px;
+      width: 100vw !important;
+      max-width: 100% !important;
+    }
+  }
+</style>
+
+<script>
+  (function () {
+    const openTriggers = document.querySelectorAll(".item6");
+    const overlay = document.getElementById("sidebarOverlay6");
+    const closeBtn = overlay.querySelector(".close-btn-6");
+
+    openTriggers.forEach((trigger) => {
+      trigger.addEventListener("click", () => {
+        overlay.classList.add("is-open");
+        document.body.style.overflow = "hidden";
+      });
+    });
+
+    closeBtn.addEventListener("click", closeSidebar);
+
+    overlay.addEventListener("click", (e) => {
+      if (e.target === overlay) closeSidebar();
+    });
+
+    function closeSidebar() {
+      overlay.classList.remove("is-open");
+      document.body.style.overflow = "";
+    }
+  })();
+</script>
